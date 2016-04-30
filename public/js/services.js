@@ -2,22 +2,26 @@
 
 var app = angular.module('apiViewer');
 
-app.service('Pokemon', function($q, $http){
+app.service('Pokemon', function($q, $http) {
 
     this.getAll = () => {
         return $q((resolve, reject) => {
-        var pokemon = $http.get('http://pokeapi.co/api/v2/pokemon-species/?limit=721&offset=260');
-        resolve(pokemon)
+            var pokemon = $http({
+                method: 'GET',
+                url: 'http://pokeapi.co/api/v2/pokemon-species/?limit=721&offset=260',
+                cache: true
+            });
+            resolve(pokemon)
         });
     };
     this.getByName = name => {
         return $q((resolve, reject) => {
             var singlePokemon = $http.get(`http://pokeapi.co/api/v2/pokemon/${name}`);
-             if(singlePokemon){
-                 resolve(singlePokemon);  // trigger  .then()
-             }else{
-                 reject(new Error('singlePokemon not found')); // trigger .catch()
-             }
+            if (singlePokemon) {
+                resolve(singlePokemon); // trigger  .then()
+            } else {
+                reject(new Error('singlePokemon not found')); // trigger .catch()
+            }
         });
     };
 });

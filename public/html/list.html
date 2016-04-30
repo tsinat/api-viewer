@@ -1,16 +1,16 @@
 <h1>List</h1>
-<ul class= 'navigation'>
-    <li ng-click='previousList()'>Previous</li>
-    <li ng-click='nextList()'>Next</li>
+<ul class='navigation'>
+    <li ng-click='previousList()'><span class="glyphicon glyphicon-chevron-left"></span> </li>
+    <li ng-click='nextList()'><span class="glyphicon glyphicon-chevron-right"></span></li>
 </ul>
 <ul>
-  <li class='listPoke nameList'>Names</li>
-  <li class='listPoke' ng-repeat='poke in currentPokemon' ui-sref='detail({ name: poke.name })'>
-    {{poke.name}}
+    <li class='listPoke nameList'>Names</li>
+    <li class='listPoke' ng-repeat='poke in currentPokemon' ui-sref='detail({ name: poke.name })'>
+        {{poke.name}}
 
-  </li>
+    </li>
 </ul>
-<ul class= 'navigation'>
-    <li ng-click='previousList()'>Previous</li>
-    <li ng-click='nextList()'>Next</li>
+<ul class='navigation'>
+    <li ng-click='previousList()'><span class="glyphicon glyphicon-chevron-left"></span> </li>
+    <li ng-click='nextList()'><span class="glyphicon glyphicon-chevron-right"></span></li>
 </ul>
