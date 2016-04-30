@@ -1,0 +1,16 @@
+<h1>List</h1>
+<ul class= 'navigation'>
+    <li ng-click='previousList()'>Previous</li>
+    <li ng-click='nextList()'>Next</li>
+</ul>
+<ul>
+  <li class='listPoke nameList'>Names</li>
+  <li class='listPoke' ng-repeat='poke in currentPokemon' ui-sref='detail({ name: poke.name })'>
+    {{poke.name}}
+
+  </li>
+</ul>
+<ul class= 'navigation'>
+    <li ng-click='previousList()'>Previous</li>
+    <li ng-click='nextList()'>Next</li>
+</ul>
